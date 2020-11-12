@@ -32,7 +32,7 @@ public class PushPublishHTTPCupertinoLivepeerHandler extends PushPublishHTTPCupe
   protected String basePath = "live/";
   protected String httpAddress;
   protected HttpClient httpClient;
-  protected WMSLogger logger;
+//  protected WMSLogger logger;
   protected LivepeerStream livepeerStream;
 
   boolean backup = false;
