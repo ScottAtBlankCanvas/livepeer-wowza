@@ -542,7 +542,7 @@ public class LivepeerStream {
             streamFile.loadObject();
             String streamFileName = streamFile.getStreamfileName();
             if (streamFilesMustExist.containsKey(streamFileName)) {
-                if (streamFilesMustExist.get(streamFile.getStreamfileName()) == streamFile.getUri()) {
+                if (streamFilesMustExist.get(streamFile.getStreamfileName()).equals(streamFile.getUri())) {
                     logger.debug("LIVEPEER found good existing streamFile: " + streamFile.getStreamfileName());
                     streamFilesMustExist.remove(streamFileName);
                 } else {
