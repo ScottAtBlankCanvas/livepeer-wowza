@@ -5,27 +5,17 @@ package org.livepeer.LivepeerWowza;
  */
 
 
-import java.io.*;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.UUID;
-import java.util.concurrent.Future;
-import com.wowza.util.IPacketFragment;
+
+import org.apache.http.client.HttpClient;
+
 import com.wowza.util.PacketFragmentList;
 import com.wowza.wms.application.IApplicationInstance;
 import com.wowza.wms.httpstreamer.cupertinostreaming.livestreampacketizer.LiveStreamPacketizerCupertinoChunk;
-import com.wowza.wms.logging.WMSLogger;
 import com.wowza.wms.manifest.model.m3u8.MediaSegmentModel;
 import com.wowza.wms.manifest.model.m3u8.PlaylistModel;
 import com.wowza.wms.pushpublish.protocol.cupertino.PushPublishHTTPCupertino;
 import com.wowza.wms.server.LicensingException;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.entity.AbstractHttpEntity;
-import org.apache.http.util.EntityUtils;
 
 public class PushPublishHTTPCupertinoLivepeerHandler extends PushPublishHTTPCupertino {
 

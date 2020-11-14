@@ -1,11 +1,12 @@
 package org.livepeer.LivepeerWowza;
 
-import com.wowza.util.IPacketFragment;
-import com.wowza.util.PacketFragmentList;
-import com.wowza.wms.httpstreamer.cupertinostreaming.livestreampacketizer.LiveStreamPacketizerCupertinoChunk;
-import com.wowza.wms.logging.WMSLogger;
-import com.wowza.wms.manifest.model.m3u8.MediaSegmentModel;
-import org.apache.commons.fileupload.FileUploadBase;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.apache.commons.fileupload.MultipartStream;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.http.Header;
@@ -13,18 +14,17 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.ContentType;
 import org.apache.http.message.BasicLineParser;
-import org.apache.http.message.LineParser;
 import org.apache.http.util.EntityUtils;
-import org.apache.james.mime4j.dom.Message;
 
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import com.wowza.util.IPacketFragment;
+import com.wowza.util.PacketFragmentList;
+import com.wowza.wms.httpstreamer.cupertinostreaming.livestreampacketizer.LiveStreamPacketizerCupertinoChunk;
+import com.wowza.wms.logging.WMSLogger;
+import com.wowza.wms.manifest.model.m3u8.MediaSegmentModel;
 
 /**
  * Represents a single Livepeer segment being pushed and all of its transcoded renditions. Takes care of the pushing

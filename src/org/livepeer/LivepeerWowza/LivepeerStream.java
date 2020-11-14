@@ -752,11 +752,11 @@ public class LivepeerStream {
     }
 
     public String getManifest(String renditionName) {
-        List<String> lines = new ArrayList();
+        List<String> lines = new ArrayList<String>();
         lines.add("#EXTM3U");
         lines.add("#EXT-X-VERSION:3");
         LivepeerSegment earliest = null;
-        List<String> segmentLines = new ArrayList();
+        List<String> segmentLines = new ArrayList<String>();
         for (LivepeerSegment segment : segments.values()) {
             if (!segment.isReady()) {
                 break;

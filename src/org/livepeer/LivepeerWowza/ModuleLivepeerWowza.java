@@ -1,18 +1,16 @@
 package org.livepeer.LivepeerWowza;
 
-import com.wowza.wms.rest.ConfigBase;
-import com.wowza.wms.server.LicensingException;
-import com.wowza.wms.stream.*;
-import com.wowza.wms.stream.livetranscoder.*;
-import com.wowza.wms.module.*;
-
 import com.wowza.wms.amf.AMFPacket;
-import com.wowza.wms.application.*;
+import com.wowza.wms.application.IApplicationInstance;
+import com.wowza.wms.application.WMSProperties;
 import com.wowza.wms.media.model.MediaCodecInfoAudio;
 import com.wowza.wms.media.model.MediaCodecInfoVideo;
-
-import java.io.IOException;
-import java.util.concurrent.ConcurrentHashMap;
+import com.wowza.wms.module.ModuleBase;
+import com.wowza.wms.stream.IMediaStream;
+import com.wowza.wms.stream.IMediaStreamActionNotify2;
+import com.wowza.wms.stream.IMediaStreamActionNotify3;
+import com.wowza.wms.stream.IMediaStreamLivePacketNotify;
+import com.wowza.wms.stream.livetranscoder.ILiveStreamTranscoderControl;
 
 /**
  * Livepeer Wowza module. It's designed to be a drop-in replacement for Wowza's
